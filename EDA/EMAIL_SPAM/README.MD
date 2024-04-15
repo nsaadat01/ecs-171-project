@@ -1,5 +1,7 @@
-##Email Spam
+Email Spam
+
 Link to dataset: https://www.kaggle.com/datasets/kaggleprollc/spam-email-data-uci
+
 This dataset is a collection of filed spam emails, which include promotional and chained content. The dataset can be used for classification, and a trained model can be deployed to create a spam filter on emails. This can help determine if the email is spam or not. Includes 48 real attributes and totals 57 attributes. Attributes calculate word occurrence percentages as well.
 
 The "spam" concept is diverse: advertisements for products/websites, make money fast schemes, chain letters, pornography...
@@ -24,7 +26,9 @@ Class Distribution:
 	Non-Spam  2788  (60.6%)
 
 Attribute Statistics:
+
    Min: Max:   Average:  Std.Dev: Coeff.Var_%: 
+
 1  0    4.54   0.10455   0.30536  292          
 2  0    14.28  0.21301   1.2906   606          
 3  0    5.1    0.28066   0.50414  180          
