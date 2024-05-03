@@ -1,0 +1,112 @@
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Fallback to Arial if Helvetica is not available */
+}
+
+.Navigation {
+    background-color: #333; /* Dark background for the navbar */
+    display: flex; /* Uses flexbox to align the links */
+    justify-content: space-around; /* Distributes space evenly around the links */
+    position: fixed; /* Makes the navbar fixed at the top */
+    width: 100%; /* Ensures the navbar spans the full width of the viewport */
+    top: 0; /* Aligns the navbar at the top of the viewport */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.Navigation a {
+    display: block; /* Makes the links take up the entire block space */
+    color: blacks; /* Text color for the links */
+    background-color: #ddd; /* Light grey background on hover */
+    text-align: center; /* Centers the text inside the link */
+    padding: 14px 16px; /* Adds padding to make the links easier to click */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 16px; /* Sets the font size for the links */
+    border-radius: 20px; /* Rounds the corners of the links */
+    transition: background-color 0.3s, color 0.3s; /* Smooths the transition for background and color changes */
+}
+
+.Navigation a:hover {
+    background-color: #ddd; /* Light grey background on hover */
+    color: black; /* Changes text color to black on hover */
+}
+
+
+
+.Title {
+    background-color: #005288;
+    color: white;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.Title .hook {
+    font-family: Helvetica; /* Ensures the font matches the rest of your text */
+    font-size: 20px; /* Keeps the font size noticeable but not too large */
+    color: white; /* Sets a color that matches the header for consistency */
+    text-align: center; /* Aligns the text to the left to match your header */
+    padding: 10px 0; /* Adds vertical padding for spacing, no horizontal padding */
+    font-style: italic; /* Makes the text italic */
+    font-weight: bold; /* Keeps the text bold to maintain emphasis */
+}
+
+
+
+.Introduction h2 {
+    text-align: center; /* Aligns the header text to the left */
+    margin-top: 20px; /* Adds a bit of margin on the top for spacing */
+    color: #005288; /* Sets a distinct color for the header */
+    font-size: 30px; /* Sets the size of the font for clarity */
+}
+
+.Introduction p {
+    background-color: #f4f4f4; /* Matching the background color of the feature boxes */
+    border-radius: 10px; /* Rounding the corners like the boxes */
+    padding: 20px; /* Adding padding for spacing inside the box */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Adding a subtle shadow for depth, similar to the boxes */
+    margin: 20px auto; /* Centering the box and adding spacing around it */
+    width: 80%; /* Adjust width as needed, or use max-width for responsiveness */
+    text-align: center; /* Center-aligning the text if desired */
+}
+
+
+
+.Features {
+    text-align: center; /* Aligns the header text to the left */
+    margin-top: 20px; /* Adds a bit of margin on the top for spacing */
+    color: #005288; /* Sets a distinct color for the header */
+    font-size: 30px; /* Sets the size of the font for clarity */
+}
+
+.asteroid-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a grid with three columns */
+    gap: 20px; /* Spacing between grid items */
+    padding: 20px; /* Padding around the entire grid section */
+}
+
+.feature {
+    background-color: #f4f4f4; /* Light grey background for each feature box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside each feature box */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    text-align: center; /* Centers the text inside the box */
+}
+
+.feature h3 {
+    margin-top: 0; /* Removes the top margin from the header */
+    color: #333; /* Dark text color for contrast */
+}
+
+.Authors {
+    background-color: #005288; /* Dark blue background */
+    text-align: center; /* Center aligns the text */
+    padding: 10px 0; /* Adds padding above and below the text */
+    font-size: 16px; /* Sets an appropriate font size */
+    position: fixed; /* Fixes the footer to the bottom */
+    width: 100%; /* Ensures the footer spans the entire width of the page */
+    bottom: 0; /* Positions the footer at the bottom of the page */
+    left: 0; /* Aligns the footer to the left edge of the page */
+}
+
+.Authors p {
+    color: white;
+}
