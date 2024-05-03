@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Asteroid danger website</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#moreinfo">More Info</a>
+        <a href="#aboutproject">About this project</a>
+    </div>
+    <h1>Try out the simulation</h1>
+    <h2>Move the sliders to create your own asteroid</h2>
+    <div class="slidecontainer" id="EccentricitySlider">
+        <input type="range" min="0" max="100" value="50" oninput="updateRangeValue('Eccentricity', this.value)" id="Eccentricity">
+        <p id="rangeValueEccentricity">50</p>   
+    </div>
+
+    <div class="slidecontainer" id="RelativeVelocitySlider">
+        <input type="range" min="0" max="100" value="50" oninput="updateRangeValue('RelativeVelocity', this.value)" id="RelativeVelocity">
+        <p id="rangeValueRelativeVelocity">50</p>   
+    </div>
+
+    <div class="slidecontainer" id="PerihelionDistanceSlider">
+        <input type="range" min="0" max="100" value="50" oninput="updateRangeValue('PerihelionDistance', this.value)" id="PerihelionDistance">
+        <p id="rangeValuePerihelionDistance">50</p>   
+    </div>
+
+    <div class="slidecontainer" id="AbsoluteMagnitudeSlider">
+        <input type="range" min="0" max="100" value="50" oninput="updateRangeValue('AbsoluteMagnitude', this.value)" id="AbsoluteMagnitude">
+        <p id="rangeValueAbsoluteMagnitude">50</p>   
+    </div>
+
+    <div class="slidecontainer" id="OrbitUncertainitySlider">
+        <input type="range" min="0" max="100" value="50" oninput="updateRangeValue('OrbitUncertainity', this.value)" id="OrbitUncertainity">
+        <p id="rangeValueOrbitUncertainity">50</p>   
+    </div>
+    <div id="oval"></div>
+    <script>
+        function updateRangeValue(id, value) {
+            document.getElementById('rangeValue' + id).innerText = value;
+        }
+    </script>
+  </body>
+</html>
