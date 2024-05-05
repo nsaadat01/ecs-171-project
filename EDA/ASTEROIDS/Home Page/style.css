@@ -1,112 +1,153 @@
-body {
-    font-family: 'Helvetica', 'Arial', sans-serif; /* Fallback to Arial if Helvetica is not available */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scroll */
+    font-family: 'Electrolize', sans-serif;
+ }
+ 
+ .video-background {
+    position: fixed;
+    top: -10%; /* Adjust top to zoom in */
+    left: -10%; /* Adjust left to zoom in */
+    width: 120%; /* Increase width to cover adjustment */
+    height: 120%; /* Increase height to cover adjustment */
+    z-index: -1; /* Place behind everything */
+ }
+ 
+ .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Disables mouse events */
+ }
+ 
+ .Navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 15, 36);
+    z-index: 1000; 
+    text-align: center;
+    padding: 15px 0;
+ }
+ 
+ .Navigation a {
+    color: #e94560;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ .Navigation a:hover {
+    background-color: #0f3460;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+ 
+ 
+ .Title {
+    text-align: center;
+    padding: 10px; 
+    color: #FFF; 
+ }
+ 
+ .Title h1 {
+    font-size: 8em;
+    color: #e94560; 
+    margin-bottom: 0; 
+    margin-top: 45px;
+ }
+ 
+ .Title p {
+    font-size: 2em; 
+    color: #e94560;
+    font-style: italic;
+    margin: 20px 0 20px 0;
+ }
+ 
+ .Introduction {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 50%;
+    margin-right: 50%;
 }
 
-.Navigation {
-    background-color: #333; /* Dark background for the navbar */
-    display: flex; /* Uses flexbox to align the links */
-    justify-content: space-around; /* Distributes space evenly around the links */
-    position: fixed; /* Makes the navbar fixed at the top */
-    width: 100%; /* Ensures the navbar spans the full width of the viewport */
-    top: 0; /* Aligns the navbar at the top of the viewport */
-    z-index: 1000; /* Ensures the navbar stays on top of other content */
+.relevantFeatures {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 50%;
+    margin-left: 50%;
 }
 
-.Navigation a {
-    display: block; /* Makes the links take up the entire block space */
-    color: blacks; /* Text color for the links */
-    background-color: #ddd; /* Light grey background on hover */
-    text-align: center; /* Centers the text inside the link */
-    padding: 14px 16px; /* Adds padding to make the links easier to click */
-    text-decoration: none; /* Removes underline from links */
-    font-size: 16px; /* Sets the font size for the links */
-    border-radius: 20px; /* Rounds the corners of the links */
-    transition: background-color 0.3s, color 0.3s; /* Smooths the transition for background and color changes */
-}
-
-.Navigation a:hover {
-    background-color: #ddd; /* Light grey background on hover */
-    color: black; /* Changes text color to black on hover */
-}
-
-
-
-.Title {
-    background-color: #005288;
-    color: white;
-    padding-top: 30px;
+.Introduction h2 {
+    color: #e94560; /* Header colors */
+    font-size: 3rem;
+    margin: 0 10px 10px 10px;
     text-align: center;
 }
 
-.Title .hook {
-    font-family: Helvetica; /* Ensures the font matches the rest of your text */
-    font-size: 20px; /* Keeps the font size noticeable but not too large */
-    color: white; /* Sets a color that matches the header for consistency */
-    text-align: center; /* Aligns the text to the left to match your header */
-    padding: 10px 0; /* Adds vertical padding for spacing, no horizontal padding */
-    font-style: italic; /* Makes the text italic */
-    font-weight: bold; /* Keeps the text bold to maintain emphasis */
+.relevantFeatures h2 {
+    color: #e94560; /* Header colors */
+    font-size: 2.5rem;
+    margin: 0 10px 20px 10px;
+    text-align: center;
 }
 
-
-
-.Introduction h2 {
-    text-align: center; /* Aligns the header text to the left */
-    margin-top: 20px; /* Adds a bit of margin on the top for spacing */
-    color: #005288; /* Sets a distinct color for the header */
-    font-size: 30px; /* Sets the size of the font for clarity */
+.Introduction p, .relevantFeatures p {
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); /* Text shadow for better readability */
+    padding: 0 20px 20px 20px; /* Inner padding */
+    font-size: 15px;
+    text-align: center;
+    color: #FFF;
 }
 
-.Introduction p {
-    background-color: #f4f4f4; /* Matching the background color of the feature boxes */
-    border-radius: 10px; /* Rounding the corners like the boxes */
-    padding: 20px; /* Adding padding for spacing inside the box */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Adding a subtle shadow for depth, similar to the boxes */
-    margin: 20px auto; /* Centering the box and adding spacing around it */
-    width: 80%; /* Adjust width as needed, or use max-width for responsiveness */
-    text-align: center; /* Center-aligning the text if desired */
-}
-
-
-
-.Features {
-    text-align: center; /* Aligns the header text to the left */
-    margin-top: 20px; /* Adds a bit of margin on the top for spacing */
-    color: #005288; /* Sets a distinct color for the header */
-    font-size: 30px; /* Sets the size of the font for clarity */
-}
-
-.asteroid-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates a grid with three columns */
-    gap: 20px; /* Spacing between grid items */
-    padding: 20px; /* Padding around the entire grid section */
-}
 
 .feature {
-    background-color: #f4f4f4; /* Light grey background for each feature box */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside each feature box */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    text-align: center; /* Centers the text inside the box */
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 30px;
+    padding-bottom: 75px;
+    color: #FFF; 
+ }
 
-.feature h3 {
-    margin-top: 0; /* Removes the top margin from the header */
-    color: #333; /* Dark text color for contrast */
-}
+ .feature div {
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 50%;
+    padding: 30px;
+ }
+ 
+ 
+ .feature h3 {
+    font-size: 30px;
+    color: #e94560;
+    text-align: center;
+ }
+ 
+ .feature ul {
+    list-style-type: disc; 
+ }
 
-.Authors {
-    background-color: #005288; /* Dark blue background */
-    text-align: center; /* Center aligns the text */
-    padding: 10px 0; /* Adds padding above and below the text */
-    font-size: 16px; /* Sets an appropriate font size */
-    position: fixed; /* Fixes the footer to the bottom */
-    width: 100%; /* Ensures the footer spans the entire width of the page */
-    bottom: 0; /* Positions the footer at the bottom of the page */
-    left: 0; /* Aligns the footer to the left edge of the page */
-}
+ .feature ul > li {
+    text-align: left;
+    font-size: 18px;
+ }
+ 
 
-.Authors p {
+
+ .Authors {
+    background-color: #0a0f24;
     color: white;
-}
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+ }
+ 

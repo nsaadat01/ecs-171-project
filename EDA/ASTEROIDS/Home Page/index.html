@@ -1,80 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ASTEROIDS</title>
-    <html lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width"/>
-    <title>Celestial Sentry - Asteroid Prediction</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <div class="Navigation">
+    <!-- Navigation -->
+    <nav class="Navigation">
         <a href="#Home">Home</a>
         <a href="#Simulation">Simulation</a>
         <a href="#About">About</a>
+    </nav>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/K8zQaBtyq9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=K8zQaBtyq9Y" 
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
-    <div class="Title">
+    <!-- Title -->
+    <header class="Title">
         <h1>ASTEROIDS</h1>
-        <p class="hook">Exploring the Skies, Protecting the Earth</p>
-    </div>
+        <p>Exploring the Skies, Protecting the Earth</p>
+    </header>
 
-    
-    <div class="Introduction">
-        <h2>
-            Introduction
-        </h2>
-        <p>
-            Asteroids, the silent sentinels of our solar system, hold the potential for catastrophic impact on Earth. 
-            Though the chances of a major collision are rare, the consequences could be apocalyptic, echoing the 
-            ancient impacts that once reshaped the surface of our planet and led to mass extinctions. Modern science 
-            allows us to track these celestial wanderers, yet many remain undetected, lurking in the shadows of space. 
-            Understanding and monitoring asteroids is not just a matter of scientific curiosity but a crucial safeguard 
-            against potential future disasters. As we stand on the brink of potential celestial calamities, the study of 
-            asteroids is not only about exploring the cosmos but also about protecting our own world from the unknown 
-            dangers of the universe.
-        </p>
-    </div>
-    
+    <!-- Main -->
+    <main> 
 
-    <h2 class="Features">Asteroid Features</h2>
-    <section class="asteroid-features">
-
-        <div class="feature">
-            <h3>Absolute Magnitude</h3>
-        </div>
-
-        <div class="feature">
-            <h3>Eccentricity</h3>
-        </div>
-
-        <div class="feature">
-            <h3>Minimum Orbit Intersection</h3>
-        </div>
-
-        <div class="feature">
-            <h3>Orbit Uncertainty</h3>
-        </div>
-
-        <div class="feature">
-            <h3>Perihelion Distance</h3>
-        </div>
-
-        <div class="feature">
-            <h3>Relative Velocity km per hr</h3>
+        <!-- Introduction -->
+        <div class="Introduction">
+            <h2>Introduction</h2>
+            <p>
+                Asteroids, the silent sentinels of our solar system, hold the potential for catastrophic impact on Earth.
+                Though the chances of a major collision are rare, the consequences could be apocalyptic, echoing the
+                ancient impacts that once reshaped the surface of our planet and led to mass extinctions. Modern science
+                allows us to track these celestial wanderers, yet many remain undetected, lurking in the shadows of space.
+                Understanding and monitoring asteroids is not just a matter of scientific curiosity but a crucial safeguard
+                against potential future disasters. As we stand on the brink of potential celestial calamities, the study of
+                asteroids is not only about exploring the cosmos but also about protecting our own world from the unknown
+                dangers of the universe. To better protect Earth, we have developed a model that helps us understand which
+                asteroids could be dangerous. We share this information to help everyone understand the risks and what
+                scientists are doing to prevent potential impacts. This effort is not just about studying space but also
+                about keeping our planet safe.
+            </p>
         </div>
         
-    </section>
+        <!-- Features -->
+        <div class="relevantFeatures">
+            <h2>Relevant Asteroid Features</h2>
+            <p>The following features were selected for our model as they proved to be the most accurate inputs for predicting
+                asteroid behavior and risk, out of a larger dataset of possible characteristics.
+            </p>
+        </div>
     
+            <section class="feature">
 
+                <div>
+                    <h3>Absolute Magnitude</h3>
+                    <ul>
+                        <li>Measures asteroid's brightness from a standard distance</li>
+                        <li>Lower values indicate larger asteroids</li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h3>Eccentricity</h3>
+                    <ul>
+                        <li>Describes the shape of the orbit</li>
+                        <li>Higher values suggest more elongated orbits</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Minimum Orbit Intersection</h3>
+                    <ul>
+                        <li>Measures closest approach to Earth's orbit</li>
+                        <li>Key metric for impact risk assessment</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Orbit Uncertainty</h3>
+                    <ul>
+                        <li>Indicates reliability of orbit data</li>
+                        <li>Higher values mean greater prediction errors</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Perihelion Distance</h3>
+                    <ul>
+                        <li>Closest distance to the Sun</li>
+                        <li>Affects potential threat level to Earth</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Relative Velocity</h3>
+                    <ul>
+                        <li>In kilometers per hour</li>
+                        <li>Measures speed relative to Earth</li>
+                        <li>Important for assessing kinetic impact potential</li>
+                    </ul>
+                </div>
+
+            </section>
+        
+    </main>
+
+    <!-- Footer -->
     <footer class="Authors">
-        <p>Authors: Michael Lemucchi, Noor-Aysha Saadat, Nelsen Young, Ben Hassner</p>
+        <p>Authors: Ben Hassner, Michael Lemucchi, Noor-Aysha Saadat, Nelsen Young</p>
     </footer>
-
-
 </body>
 </html>
