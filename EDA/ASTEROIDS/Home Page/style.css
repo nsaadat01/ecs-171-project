@@ -22,7 +22,9 @@ body, html {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Disables mouse events */
+    filter: brightness(600%);
  }
+
  
  .Navigation {
     position: fixed;
@@ -58,15 +60,21 @@ body, html {
  
  .Title h1 {
     font-size: 8em;
+    letter-spacing: 0.05em;
     color: #e94560; 
     margin-bottom: 0; 
     margin-top: 45px;
+    text-shadow: 
+        -2px -2px 0 rgba(255, 255, 255, 0.5),  
+         2px -2px 0 rgba(255, 255, 255, 0.5),
+        -2px  2px 0 rgba(54, 51, 51, 0.5),
+         2px  2px 0 rgba(255, 255, 255, 0.5),
+         0px  0px 5px rgba(0, 0, 0, 0.5); /* 3D effect with white shadows for outline and black shadow for depth */
  }
- 
+
  .Title p {
     font-size: 2em; 
     color: #e94560;
-    font-style: italic;
     margin: 20px 0 20px 0;
  }
  
