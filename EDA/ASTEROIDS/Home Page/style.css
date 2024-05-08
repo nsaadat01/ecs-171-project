@@ -60,6 +60,7 @@ body, html {
  }
  
  .Title h1 {
+    font-family:'Gill Sans';
     font-size: 8em;
     letter-spacing: 0.05em;
     color: #e94560; 
