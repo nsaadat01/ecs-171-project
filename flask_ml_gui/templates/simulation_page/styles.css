@@ -4,3 +4,19 @@
     background-color: blue; /* Color of the oval */
     border-radius: 50%; /* Makes it a circle */
   }
+
+  .info-icon-orbit-uncertainty {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 5px; /* Adjust spacing as needed */
+}
+
+.info-icon-orbit-uncertainty:hover::after {
+    content: "This represents the uncertainty in the orbit. The larger the value, the greater the uncertainty.";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+}
