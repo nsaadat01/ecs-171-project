@@ -1,0 +1,6 @@
+#oval {
+    width: 200px; /* Initial width */
+    height: 100px; /* Initial height */
+    background-color: blue; /* Color of the oval */
+    border-radius: 50%; /* Makes it a circle */
+  }
