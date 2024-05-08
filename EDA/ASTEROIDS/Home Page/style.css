@@ -23,7 +23,7 @@ body, html {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Disables mouse events */
-    filter: brightness(600%);
+    filter: brightness(60%);
  }
 
  
@@ -60,24 +60,39 @@ body, html {
  }
  
  .Title h1 {
-    font-family:'Gill Sans';
     font-size: 8em;
     letter-spacing: 0.05em;
     color: #e94560; 
     margin-bottom: 0; 
-    margin-top: 45px;
-    text-shadow: 
-        -2px -2px 0 rgba(255, 255, 255, 0.5),  
-         2px -2px 0 rgba(255, 255, 255, 0.5),
-        -2px  2px 0 rgba(54, 51, 51, 0.5),
-         2px  2px 0 rgba(255, 255, 255, 0.5),
-         0px  0px 5px rgba(0, 0, 0, 0.5); /* 3D effect with white shadows for outline and black shadow for depth */
- }
+    margin-top: 55px;
+    animation: neon-pulse 2.0s infinite alternate; /* Neon pulse animation */
+   }
+
+   @keyframes neon-pulse {
+      from {
+         text-shadow: 
+               -2px -2px 0 rgba(255, 255, 255, 0.5),  
+               2px -2px 0 rgba(255, 255, 255, 0.5),
+               -2px  2px 0 rgba(54, 51, 51, 0.5),
+               2px  2px 0 rgba(255, 255, 255, 0.5),
+               0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
+               0 0 10px #e945de; /* Pink neon glow */
+      }
+      to {
+         text-shadow: 
+               -2px -2px 0 rgba(255, 255, 255, 0.5),  
+               2px -2px 0 rgba(255, 255, 255, 0.5),
+               -2px  2px 0 rgba(54, 51, 51, 0.5),
+               2px  2px 0 rgba(255, 255, 255, 0.5),
+               0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
+               0 0 25px #e945de; /* Increase glow intensity */
+      }
+   }
 
  .Title p {
     font-size: 2em; 
     color: #e94560;
-    margin: 20px 0 20px 0;
+    margin: 0 0 20px 0;
  }
  
  .Introduction {
