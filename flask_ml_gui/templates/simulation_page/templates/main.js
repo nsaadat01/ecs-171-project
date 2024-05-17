@@ -21,14 +21,19 @@ function updateOrbitRangeValue(id, value) {
 } */
 
 function positionSlidersInCircle() {
+  const slidersContainer = document.querySelector('.sliders');
   const sliders = document.querySelectorAll('.slidecontainer');
-  const radius = 350; // Radius of the circle
-  const centerX = 400; // Center X position
-  const centerY = 400; // Center Y position
+  
+  // Calculate the center coordinates of the sliders container
+  const centerX = slidersContainer.offsetWidth / 2;
+  const centerY = slidersContainer.offsetHeight / 2;
+  
+  const radius = 350; // Radius of the circle, adjust as needed
   const angleStep = (2 * Math.PI) / sliders.length;
 
   sliders.forEach((slider, index) => {
       const angle = index * angleStep;
+      // Calculate coordinates relative to the center of the sliders container
       const x = centerX + radius * Math.cos(angle) - slider.offsetWidth / 2;
       const y = centerY + radius * Math.sin(angle) - slider.offsetHeight / 2;
       slider.style.left = `${x}px`;
@@ -113,4 +118,42 @@ function updateRangeValue(id, value) {
     cancelAnimationFrame(animationFrame);
     animateOval();
 }
+/*
+function sendDataToFlask(data) {
+  // Send data to Flask endpoint using AJAX
+  fetch('/flaaaaaaaaaaaaaaaaaaask', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Handle response from Flask
+    console.log('Response from Flask:', data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function handleSubmit(event) {
+  const sliderContainers = document.querySelectorAll('.slidecontainer');
+  const data = {};
+  sliderContainers.forEach(container => {
+    const sliderId = container.id;
+    const sliderValue = container.querySelector('input[type="range"]').value;
+    data[sliderId] = sliderValue;
+  });
+  sendDataToFlask(data);
+} 
+
+const submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', handleSubmit); */
 
