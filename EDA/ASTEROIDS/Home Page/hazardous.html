@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asteroid Prediction</title>
+    <title>Hazardous Asteroid</title>
+    <link rel="stylesheet" href="hazardous.css">
 </head>
 <body>
+    <div class="shake-container">
+        <p>shaking</p>
+        <audio id="emergencyAlert" autoplay>
+            <source src="emergency-alert.mp3" type="audio/mp3">
+        </audio>
+
+    </div>
+
+    <script>
+        // JavaScript to control the audio duration
+        const audio = document.getElementById('emergencyAlert');
+        audio.addEventListener('canplaythrough', function() {
+            setTimeout(() => {
+                audio.pause();
+            }, 15000);  // Stops playing after 15 seconds
+        });
+    </script>
     
 </body>
 </html>
