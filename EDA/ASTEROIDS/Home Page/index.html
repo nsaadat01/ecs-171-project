@@ -26,7 +26,7 @@
     <!-- Title -->
     <header class="Title">
         <h1>ASTEROIDS</h1>
-        <p>The Biggest Threats Are The Ones You Don't See Coming</p>
+        <p>The Greatest Threats Are The Ones You Never See Coming</p>
     </header>
 
 
@@ -48,8 +48,9 @@
         <!-- Features -->
         <div class="relevantFeatures">
             <h2>Relevant Asteroid Features</h2>
-            <p>The following features were selected for our model as they proved to be the most accurate inputs for predicting
-                asteroid behavior and risk, out of a larger dataset of possible characteristics.
+            <p>
+                The following features were deemed by our exploratory data analysis to
+                have the greatest predictive power over asteroid hazard potential:
             </p>
         </div>
     
@@ -60,8 +61,8 @@
                         <h3>Absolute Magnitude</h3>
                     </div>
                     <div class="card-back">
-                        <p>Measures asteroid's brightness from a standard distance.
-                            Lower values indicate larger asteroids 
+                        <p>Measures an asteroid's intrinsic brightness, as if it were 1 AU 
+                            from both the Sun and the observer. Lower values indicate larger asteroids.
                         </p>
                     </div>
                 </div>
@@ -72,8 +73,9 @@
                     </div>
                     <div class="card-back">
                         <p>
-                            Describes the shape of the orbit.
-                            Higher values suggest more elongated orbits
+                            Eccentricity measures how elongated an asteroid's orbit is. 
+                            A value of 0 indicates a circular orbit, while values closer to 1 
+                            indicate more elongated orbits.
                         </p>
                     </div>
                 </div>
@@ -85,8 +87,8 @@
                     
                     <div class="card-back">
                         <p>
-                            Measures closest approach to Earth's orbit.
-                            This is a key metric for impact risk assessment.
+                            The smallest distance between the orbital paths of an asteroid and Earth, 
+                            indicating potential close approaches.
                         </p>
                     </div>
                 </div>
@@ -97,8 +99,8 @@
                     </div>
                     <div class="card-back">
                         <p>
-                            Indicates reliability of orbit data.
-                            Higher values mean greater prediction errors
+                            Measures how precisely an asteroid's orbit is known. Lower values 
+                            indicate a more precisely determined orbit.
                         </p>
                     </div>
                 </div>
@@ -109,8 +111,8 @@
                     </div>
                     <div class="card-back">
                         <p>
-                            Closest distance to the Sun.
-                            Affects potential threat level to Earth
+                            Perihelion distance is the closest distance between an 
+                            asteroid and the Sun.
                         </p>
                     </div>
                     
@@ -121,8 +123,8 @@
                         <h3>Relative Velocity</h3>
                     </div>
                     <div class="card-back">
-                        <p>In kilometers per hour, Measures speed relative to Earth,
-                            Important for assessing kinetic impact potential
+                        <p>The speed (in kilometers per hour) at which an asteroid moves 
+                            relative to Earth during close approaches.
                         </p>
                     </div>
                 </div>
