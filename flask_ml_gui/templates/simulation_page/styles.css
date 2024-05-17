@@ -1,22 +1,85 @@
+
+
+
 #oval {
-    width: 200px; /* Initial width */
-    height: 100px; /* Initial height */
+    width: 100 * (1 + (0.383 * 20) / 100)px; /* Initial width */
+    height: 100 * (1 - (0.383 * 20) / 100)px; /* Initial height */
     background-color: blue; /* Color of the oval */
     border-radius: 50%; /* Makes it a circle */
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .info-icon-orbit-uncertainty {
+
+  .info-icon {
     display: inline-block;
     cursor: pointer;
     margin-left: 5px; /* Adjust spacing as needed */
+  }
+
+
+
+.sliders {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.info-icon-orbit-uncertainty:hover::after {
-    content: "This represents the uncertainty in the orbit. The larger the value, the greater the uncertainty.";
+.slidecontainer {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    z-index: 1;
+    width: 150px;
+    text-align: center;
+    transform-origin: center center;
+    background-color: aqua;
 }
+
+
+
+
+/* Shared hover properties */
+.info-icon-orbit-uncertainty:hover::after, .info-icon-minimum-orbit:hover::after, .info-icon-absolute-magnitude:hover::after,
+.info-icon-perihelion-distance:hover::after, .info-icon-eccentricity:hover::after, .info-icon-relative-velocity:hover::after{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Different hover content */
+.info-icon-orbit-uncertainty:hover::after {
+  content: "This represents the uncertainty in the orbit. The larger the value, the greater the uncertainty.";
+}
+
+.info-icon-minimum-orbit:hover::after {
+  content: "This represents the minimum orbit.";
+}
+
+.info-icon-absolute-magnitude:hover::after {
+  content: "This represents the absolute magnitude.";
+}
+
+.info-icon-perihelion-distance:hover::after {
+  content: "This represents the perihelion distance.";
+}
+
+.info-icon-eccentricity:hover::after {
+  content: "This represents the perihelion distance.";
+}
+
+.info-icon-relative-velocity:hover::after {
+  content: "This represents the perihelion distance.";
+}
+
