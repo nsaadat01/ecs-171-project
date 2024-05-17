@@ -94,6 +94,13 @@ body, html {
     font-size: 2em; 
     color: #e94560;
     margin: 0 0 20px 0;
+    font-weight: 1000;
+    text-shadow: 
+            -2px -2px 0 rgba(255, 255, 255, 0.5),  
+            2px -2px 0 rgba(255, 255, 255, 0.5),
+            -2px  2px 0 rgba(54, 51, 51, 0.5),
+            2px  2px 0 rgba(255, 255, 255, 0.5),
+            0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
  }
  
  .Introduction {
@@ -154,6 +161,12 @@ body, html {
    padding: 5px;
 }
 
+.card:hover {
+   cursor: pointer; /* This changes the cursor to a hand (pointer) */
+   transform: scale(1.05); /* Adds a scaling effect on hover */
+   transition-duration: 0.45s;
+}
+
 .card-front, .card-back {
    position: absolute;
    width: 100%;
@@ -171,7 +184,6 @@ body, html {
    margin: 5px;
    font-size: 18px;
 }
-
 
 .card-back {
    transform: rotateX(180deg);
