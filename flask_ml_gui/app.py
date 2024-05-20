@@ -44,13 +44,45 @@ def getUserAsteroid():
         user_asteroid[feature] = float(user)
     return user_asteroid
 """
+
+"""
+    with open('Scaler.pkl', 'rb') as file:
+        scaler = pickle.load(file)
+    
+    f = open('file.py', 'w')
+    f.write(scaler)
+    f.close()
+    
+
+    user_asteroid_df = pd.DataFrame([input_data], index=[0])
+
+    scaled_user_asteroid_df = scaler.transform(user_asteroid_df)
+
+    scaled_user_asteroid_df = pd.DataFrame(scaled_user_asteroid_df, columns=user_asteroid_df.columns)
+"""
+
 def getPrediction(input_data):
     with open('RFC_Asteroids_model.pkl', 'rb') as file:
         loaded_rf = pickle.load(file)
 
-    user_asteroid_df = pd.DataFrame(input_data, index=[0])
+    with open('Scaler.pkl', 'rb') as file:
+        scaler = pickle.load(file)
 
-    is_hazardous = loaded_rf.predict(user_asteroid_df)
+    f = open('file.py', 'w')
+    f.write(str(input_data))
+    f.close()
+    
+    user_asteroid_df = pd.DataFrame([input_data], index=[0])
+
+    scaled_user_asteroid_df = scaler.transform(user_asteroid_df)
+
+    scaled_user_asteroid_df = pd.DataFrame(scaled_user_asteroid_df, columns=user_asteroid_df.columns)
+
+    is_hazardous = loaded_rf.predict(scaled_user_asteroid_df)
+
+    f = open('other.py', 'w')
+    f.write(str(is_hazardous))
+    f.close()
 
     return is_hazardous
 
@@ -62,19 +94,40 @@ def index():
 def predict():
     if request.method == "POST":
         # Get user input from the form
-        input_data = {}
-        abs_mag = request.form.get("rangeValueAbsoluteMagnitude")
+        input_data = []
 
-        # Preprocess the input data for your model (if needed)
-        # ... your data preprocessing code here ...
+        absolute_magnitude = request.form.get("AbsoluteMagnitude")
+        input_data.append(22)
+
+        eccentricity = request.form.get("Eccentricity")
+        input_data.append(0.5)
+
+        minimum_orbit_intersection = request.form.get("MinimumOrbitIntersection")
+        input_data.append(0)
+
+        orbit_uncertainity = request.form.get("OrbitUncertainity")
+        input_data.append(0)
+
+        perihelion_distance = request.form.get("PerihelionDistance")
+        input_data.append(0.5)
+
+        relative_velocity = request.form.get("RelativeVelocity")
+        input_data.append(50000)
+
+        f = open('file.py', 'w')
+        f.write(str(input_data))
+        f.close()
 
         # Make prediction using your model
-        #prediction = getPrediction(input_data)
+        hazardous = getPrediction(input_data)
 
+        string = ""
         # Format the prediction for display
-        #predicted_class = prediction[0]  # Assuming single class output
-
-        return render_template("result.html", name=abs_mag)
+        if(hazardous):
+            string = "Your inputted asteroid IS HAZARDOUS! TAKE COVERRRRRR"
+        else:
+            string = "Your inputted asteroid is NOT hazardous. Phew!"
+        return render_template("result.html", name=string)
 
     else:
         return "Something went wrong. Please try again."
