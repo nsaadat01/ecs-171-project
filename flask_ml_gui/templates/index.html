@@ -2,17 +2,58 @@
 <style>
 
 
+body, html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scroll */
+    font-family: 'Electrolize', sans-serif;
+ }
+
+ .video-background {
+    position: fixed;
+    top: -20%; /* Adjust top to zoom in */
+    left: -20%; /* Adjust left to zoom in */
+    width: 140%; /* Increase width to cover adjustment */
+    height: 140%; /* Increase height to cover adjustment */
+    z-index: -1; /* Place behind everything */
+ }
+ 
+ .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Disables mouse events */
+    filter: brightness(50%);
+ }
+
 .container {
-  position: relative;
-  width: 600px; /* Adjust as needed */
-  height: 600px; /* Adjust as needed */
-  background-color: beige;
+    position: relative;
+    max-width: fit-content;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh; /* Full viewport height */
+    margin-top: 10vh;
+}
+
+.title {
+  padding: 10px;
+  position: "relative";
 }
 
 #oval {
     width: 100 * (1 + (0.383 * 20) / 100)px; /* Initial width */
     height: 100 * (1 - (0.383 * 20) / 100)px; /* Initial height */
-    background-color: blue; /* Color of the oval */
+    background-image: url('https://cdn-icons-png.freepik.com/512/9480/9480576.png'); 
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    background-size: 100% 100%;
     border-radius: 50%; /* Makes it a circle */
     visibility: visible;
     display: flex;
@@ -45,18 +86,56 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: blueviolet;
+    background-image: url('https://t4.ftcdn.net/jpg/02/43/75/73/360_F_243757367_gBpS6R5c8DB7pL5gw9gi9KXlzFfbdZOA.jpg'); 
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    background: rgba(0, 0, 0, 0.4);
+
+}
+
+h1, h2 {
+  color: white;
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+
 }
 
 .slidecontainer {
     position: absolute;
-    width: 150px;
+    width: 170px;
     text-align: center;
     transform-origin: center;
-    background-color: aqua;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+    border-radius: 20%;
 }
 
+.slidecontainer h3, p {
+  color:white;
+}
 
+.Navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 15, 36);
+    z-index: 1000; 
+    text-align: center;
+    padding: 15px 0;
+ }
+ 
+ .Navigation a {
+    color: #e94560;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ .Navigation a:hover {
+    background-color: #0f3460;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
 
 
 /* Shared hover properties */
@@ -84,41 +163,58 @@
 }
 
 .info-icon-perihelion-distance:hover::after {
-  content: "This represents the perihelion distance.";
+  content: "Distance of the closest point to the sun.";
 }
 
 .info-icon-eccentricity:hover::after {
-  content: "This represents the perihelion distance.";
+  content: "How spherical the asteroid is.";
 }
 
 .info-icon-relative-velocity:hover::after {
-  content: "This represents the perihelion distance.";
+  content: "Velocity of the asteroid.";
 }
 
+.button {
+  position:relative;
+  width:10px;
+  height:10px;
+  background:#063;
+  bottom:0px;
+  right:50%;
+  left:50%;
+  margin-left:-30px;
+}
 
 </style>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Asteroid danger website</title>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#moreinfo">More Info</a>
-        <a href="#aboutproject">About this project</a>
+    <nav class="Navigation">
+      <a href="#Home">Home</a>
+      <a href="#Simulation">Simulation</a>
+      <a href="#About">About</a>
+    </nav>
+    <div class="video-background">
+      <iframe src="https://www.youtube.com/embed/K8zQaBtyq9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=K8zQaBtyq9Y" 
+      frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
-    <h1>Try out the simulation</h1>
-    <h2>Move the sliders to create your own asteroid</h2>
+    <div class="title">
+      <h1>Try out the simulation</h1>
+      <h2>Move the sliders to create your own asteroid</h2>
+    </div>
+    
     <form method="POST" action="/predict">
     <div class="container">
         <div class="sliders">
             <div class="slidecontainer" id="EccentricitySlider">
                 <h3>Eccentricity <span class="info-icon-eccentricity" title="Information">ℹ️</span></h3>
-                <input type="range" min="0.008" max="0.96" step="0.01" value="0.383" oninput="updateOvalAndValue('Eccentricity', this.value)" id="Eccentricity" name="Eccentricity">
+                <input type="range" min="0.008" max="0.96" step="0.01" value="0.383" oninput="updateRangeValue('Eccentricity', this.value)" id="Eccentricity" name="Eccentricity">
                 <p id="rangeValueEccentricity">0.383</p>   
             </div>
 
@@ -156,7 +252,7 @@
         <div id="oval"></div>
 
     </div>
-    <div>
+    <div class="button">
         <form id="sliderForm">
             <input type="submit" value="Submit">
         </form>
@@ -233,6 +329,7 @@ function animateOval() {
   let x = a * Math.cos(angle);
   let y = b * Math.sin(angle);
   
+  
   oval.style.transform = `translate(${x}px, ${y}px)`;
 
   animationFrame = requestAnimationFrame(animateOval);
@@ -240,10 +337,20 @@ function animateOval() {
 
 // Initialize the animation
 document.addEventListener('DOMContentLoaded', (event) => {
+  positionSlidersInCircle();
+  initializeOval();
   animateOval();
-  speed = normalizeSpeed(parseFloat(velocitySlider.value));
+  //speed = normalizeSpeed(parseFloat(velocitySlider.value));
+  //animateOval();
+  
 
 });
+
+function initializeOval() {
+      // Set the initial size and position of the oval based on initial slider values
+      updateOvalSize(eccentricitySlider.value);
+      speed = normalizeSpeed(parseFloat(velocitySlider.value));
+    }
 
 
 function updateOvalAndValue(field, value) {
@@ -280,7 +387,7 @@ function updateRangeValue(id, value) {
     }
 
     if(id === 'Eccentricity') {
-
+        updateOvalSize(value);
     }
     cancelAnimationFrame(animationFrame);
     animateOval();
