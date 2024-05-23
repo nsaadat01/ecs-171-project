@@ -32,34 +32,6 @@ cols_to_drop = non_numerical_columns + domain_knowledge_drops
 clean_df = df.drop(columns=cols_to_drop)
 
 clean_df.head()
-"""
-def getUserAsteroid():
-    user_asteroid = {}
-    for feature in clean_df.columns:
-        print(f"+======{feature}======+")
-        print(f"- This feature varies from {round(min(clean_df[feature]), 3)} to {round(max(clean_df[feature]), 3)}")
-        print(f"- On average, this feature has a value of {round(clean_df[feature].mean(), 3)}")
-        user = input(f"Enter sample asteroid's {feature}: ")
-        print()
-        user_asteroid[feature] = float(user)
-    return user_asteroid
-"""
-
-"""
-    with open('Scaler.pkl', 'rb') as file:
-        scaler = pickle.load(file)
-    
-    f = open('file.py', 'w')
-    f.write(scaler)
-    f.close()
-    
-
-    user_asteroid_df = pd.DataFrame([input_data], index=[0])
-
-    scaled_user_asteroid_df = scaler.transform(user_asteroid_df)
-
-    scaled_user_asteroid_df = pd.DataFrame(scaled_user_asteroid_df, columns=user_asteroid_df.columns)
-"""
 
 def getPrediction(input_data):
     with open('RFC_Asteroids_model.pkl', 'rb') as file:
@@ -97,22 +69,22 @@ def predict():
         input_data = []
 
         absolute_magnitude = request.form.get("AbsoluteMagnitude")
-        input_data.append(22)
+        input_data.append(absolute_magnitude)
 
         eccentricity = request.form.get("Eccentricity")
-        input_data.append(0.5)
+        input_data.append(eccentricity)
 
         minimum_orbit_intersection = request.form.get("MinimumOrbitIntersection")
-        input_data.append(0)
+        input_data.append(minimum_orbit_intersection)
 
         orbit_uncertainity = request.form.get("OrbitUncertainity")
-        input_data.append(0)
+        input_data.append(orbit_uncertainity)
 
         perihelion_distance = request.form.get("PerihelionDistance")
-        input_data.append(0.5)
+        input_data.append(perihelion_distance)
 
         relative_velocity = request.form.get("RelativeVelocity")
-        input_data.append(50000)
+        input_data.append(relative_velocity)
 
         f = open('file.py', 'w')
         f.write(str(input_data))
