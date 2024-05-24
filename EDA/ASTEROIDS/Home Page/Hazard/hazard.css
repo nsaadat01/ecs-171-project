@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('../fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.alert-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    animation: flash 4.5s infinite; /* Keep the total cycle duration the same */
+}
+
+.alert-container p {
+    font-size: 5rem;
+}
+
+@keyframes flash {
+    0%, 60% { opacity: 1; } /* Fully visible for about 2.1 seconds */
+    80% { opacity: 0; } /* Gradual fade starts earlier and ends at the end of the cycle */
+}
