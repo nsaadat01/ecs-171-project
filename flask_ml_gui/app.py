@@ -62,6 +62,14 @@ def getPrediction(input_data):
 def index():
     return render_template("index.html")
 
+@app.route("/simulation")
+def simulation():
+    return render_template("simulation.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/predict", methods=["POST"])
 def predict():
     if request.method == "POST":
@@ -86,9 +94,6 @@ def predict():
         relative_velocity = request.form.get("RelativeVelocity")
         input_data.append(relative_velocity)
 
-        f = open('file.py', 'w')
-        f.write(str(input_data))
-        f.close()
 
         # Make prediction using your model
         hazardous = getPrediction(input_data)

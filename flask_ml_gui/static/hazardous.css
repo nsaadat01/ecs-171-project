@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Electrolize', sans-serif;
+    background: linear-gradient(to bottom, #333, #000);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-screen-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+#messageContainer {
+    top: 25%;
+    text-align: center;
+}
+
+.message {
+    font-size: 6em;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; 
+}
+
+.alert-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.shake-container {
+    animation: shake 0.1s linear 150;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translate(0, 0); }
+    10%, 50%, 90% { transform: translate(-5px, -3px); }
+    30%, 70% { transform: translate(5px, 3px); }
+}
+
+.fade-out {
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
