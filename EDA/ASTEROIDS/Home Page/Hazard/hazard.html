@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hazard.css">
+    <title>Hazardous Asteroid</title>
+</head>
+<body>
+    <div class="alert-container">
+        <p>EMERGENCY ALERT SYSTEM</p>
+        <p>National Weather Service</p>
+        <p>Issued an</p>
+        <p>Asteroid Warning</p>
+    </div>
+    <script>
+        setTimeout(() => {
+            const alertContainer = document.querySelector('.alert-container');
+            alertContainer.style.animation = 'none';
+        }, 30000); // Stops the animation after 30000 milliseconds (30 seconds)
+    </script>
+</body>
+</html>
