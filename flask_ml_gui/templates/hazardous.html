@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazardous Asteroid</title>
+    <link rel="stylesheet" href="hazardous.css">
+</head>
+<body>
+<div id="startOverlay" class="full-screen-button">Tap Anywhere to Start</div>
+<audio id="emergencyAlert">
+    <source src="audio/emergency.mp3" type="audio/mp3">
+</audio>
+<div class="shake-container" id="shakeContainer">
+    <div id="messageContainer">
+        <p id="message1" class="message hidden">
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+            This is not a drill!
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+        </p>
+        <p id="message2" class="message hidden">
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+            Take cover!
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+        </p>
+        <p id="message3" class="message hidden">
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+            Goodbye.
+            <img src="images/alert.png" alt="Alert" class="alert-icon">
+        </p>
+    </div>
+</div>
+
+<script src="hazardous.js"></script>
+</body>
+</html>
