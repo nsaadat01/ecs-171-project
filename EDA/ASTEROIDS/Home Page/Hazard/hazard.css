@@ -21,7 +21,7 @@ body, html {
     text-align: center;
     background-color: black;
     padding: 2rem;
-    animation: flash 4.5s infinite; /* Keep the total cycle duration the same */
+    animation: flash 4.5s infinite;
 }
 
 .final-container {
@@ -32,14 +32,44 @@ body, html {
     text-align: center;
     background-color: black;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .alert-container p, .final-container p {
+    margin: 0;
     font-size: 5rem;
+    margin-bottom: 0.5em;  /* Add some space between lines in the alert container */
 }
 
+#firstline, #secondline {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#secondline {
+    position: relative;
+    left: 20px;  /* Shift to the right */
+    top: 20px;   /* Shift downwards */
+}
 
 @keyframes flash {
-    0%, 60% { opacity: 1; } /* Fully visible for about 2.1 seconds */
-    80% { opacity: 0; } /* Gradual fade starts earlier and ends at the end of the cycle */
+    0%, 60% { opacity: 1; }
+    80% { opacity: 0; }
+}
+
+#third-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
