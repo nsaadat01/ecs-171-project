@@ -1,0 +1,40 @@
+/* Ensure the body has a black background and white text */
+body {
+    background-color: black;
+    color: white !important; /* Set text color to white */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Initial setup to ensure elements are hidden and container is flex */
+.final-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+    text-align: center;
+}
+
+/* Ensure text elements are white and have a larger font size */
+#congratulations, #safe, #fornow, #pause {
+    color: white !important; /* Set text color to white */
+    font-size: 50px; /* Set font size to 24 pixels */
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Class to show elements */
+.show {
+    opacity: 1 !important; /* Make text fully opaque */
+}
+
+/* Class to hide elements */
+.hide {
+    opacity: 0 !important; /* Make text fully transparent */
+}

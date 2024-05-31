@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nonhazard.css">
+    <title>Nonhazardous Asteroid</title>
+</head>
+<body>
+    <div class="final-container">
+        <div id="congratulations" class="hide">Congratulations! Your asteroid is not hazardous!</div>
+        <div id="safe" class="hide">You're safe.</div>
+        <div id="pause" class="hide">...</div>
+        <div id="fornow" class="hide">For now.</div>
+    </div>
+    <script>
+        setTimeout(() => {
+            const finalContainer = document.querySelector('.final-container');
+            const congratulations = document.getElementById('congratulations');
+            const youreSafe = document.getElementById('safe');
+            const pause = document.getElementById('pause');
+            const fornow = document.getElementById('fornow');
+
+            // Initially, display the final container
+            finalContainer.style.display = 'flex';
+
+            // Show congratulations
+            setTimeout(() => {
+                congratulations.classList.replace('hide', 'show');
+
+                // Hide congratulations and show you're safe after a delay
+                setTimeout(() => {
+                    congratulations.classList.replace('show', 'hide');
+                    
+                    // Pause with a black screen
+                    finalContainer.style.backgroundColor = 'black';
+                    setTimeout(() => {
+                        finalContainer.style.backgroundColor = '';
+
+                        youreSafe.classList.replace('hide', 'show');
+
+                        // Hide you're safe and show pause after a delay
+                        setTimeout(() => {
+                            youreSafe.classList.replace('show', 'hide');
+                            
+                            // Pause with a black screen
+                            finalContainer.style.backgroundColor = 'black';
+                            setTimeout(() => {
+                                finalContainer.style.backgroundColor = '';
+
+                                pause.classList.replace('hide', 'show');
+
+                                // Hide pause and show for now after a delay
+                                setTimeout(() => {
+                                    pause.classList.replace('show', 'hide');
+                                    
+                                    // Pause with a black screen
+                                    finalContainer.style.backgroundColor = 'black';
+                                    setTimeout(() => {
+                                        finalContainer.style.backgroundColor = '';
+
+                                        fornow.classList.replace('hide', 'show');
+
+                                        // Hide for now after a delay
+                                        setTimeout(() => {
+                                            fornow.classList.replace('show', 'hide');
+                                        }, 5000); // For now displayed for 3 seconds
+
+                                    }, 2000); // Pause between messages for 1 second
+
+                                }, 3000); // Pause between messages for 2 seconds
+
+                            }, 3000); // Pause displayed for 3 seconds
+
+                        }, 3000); // Display "you're safe" for 3 seconds
+
+                    }, 1000); // Pause between messages for 1 second
+
+                }, 3000); // Congratulations displayed for 3 seconds
+
+            }, 0); // Initial delay before showing congratulations for 1 second
+
+        }, 1000); // Initial delay of 1 second before showing final-container
+    </script>
+</body>
+</html>
