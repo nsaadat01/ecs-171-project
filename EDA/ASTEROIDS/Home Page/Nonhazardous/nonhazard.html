@@ -64,23 +64,23 @@
                                         // Hide for now after a delay
                                         setTimeout(() => {
                                             fornow.classList.replace('show', 'hide');
-                                        }, 5000); // For now displayed for 3 seconds
+                                        }, 8000); // For now displayed for 5 seconds
 
-                                    }, 2000); // Pause between messages for 1 second
+                                    }, 3000); // Pause between messages for 2 second
 
-                                }, 3000); // Pause between messages for 2 seconds
+                                }, 3000); // Display ""..."" for 3 seconds
 
-                            }, 3000); // Pause displayed for 3 seconds
+                            }, 3000); // Pause (display black screen) between "you're safe" and "..."
 
                         }, 3000); // Display "you're safe" for 3 seconds
 
-                    }, 1000); // Pause between messages for 1 second
+                    }, 2000); // Pause (display black screen) between "Congratulations" and "you're safe"
 
                 }, 3000); // Congratulations displayed for 3 seconds
 
-            }, 0); // Initial delay before showing congratulations for 1 second
+            }, 500); // Initial delay before showing congratulations for 0.5 second
 
-        }, 1000); // Initial delay of 1 second before showing final-container
+        }, 0); // Initial delay of 0 second before showing final-container
     </script>
 </body>
 </html>

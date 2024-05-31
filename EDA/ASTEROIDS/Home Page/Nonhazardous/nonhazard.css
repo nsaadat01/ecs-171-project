@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'Calm Font';
+    src: url('./CalmDownSampson-6YMEA.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Scary Font';
+    src: url('./ScareArms-Lxj4.ttf') format('truetype');
+}
+
 /* Ensure the body has a black background and white text */
 body {
     background-color: black;
     color: white !important; /* Set text color to white */
     margin: 0; /* Remove default margin */
-    font-family: Arial, sans-serif; /* Set a default font */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,10 +30,30 @@ body {
     text-align: center;
 }
 
+#fornow {
+    color: rgb(214, 0, 0) !important; /* Set text color to white */
+    font-size: 200px; /* Set font size to 24 pixels */
+    font-family: 'Scary Font', sans-serif;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* Smooth transition for opacity */
+}
+
+#congratulations {
+    font-size: 60px
+}
+
+#safe {
+    font-size: 80px;
+}
+
+#pause {
+    font-size: 90px;
+}
+
 /* Ensure text elements are white and have a larger font size */
-#congratulations, #safe, #fornow, #pause {
+#congratulations, #safe, #pause {
     color: white !important; /* Set text color to white */
-    font-size: 50px; /* Set font size to 24 pixels */
+    font-family: 'Calm Font', sans-serif;
     opacity: 0;
     transition: opacity 0.7s ease-in-out; /* Smooth transition for opacity */
 }
