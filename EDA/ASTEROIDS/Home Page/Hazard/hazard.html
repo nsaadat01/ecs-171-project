@@ -18,46 +18,25 @@
         <p>Asteroid Warning</p>
     </div>
     <div class="final-container" style="display: none;">
-        <p id="goodbye">Goodbye...</p>
-        <p id="fornow" style="display: none;">Goodluck...</p>
+        <div id="firstline">
+            <p style="display: none;">Goodbye</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+        </div>
+        
+        <div id="secondline">
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">and good luck.</p>
+        </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var audio = document.getElementById('alert-sound');
-            var playPromise = audio.play();
+    <div id="third-container" style="display: none;">
+        <p>Press any button to continue</p>
+    </div>
 
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                    console.log("Audio started playing automatically.");
-                }).catch(error => {
-                    console.log("Auto-play was prevented. Consider triggering playback with a user gesture.");
-                });
-            }
-        });
-
-        // Hide alert container and show final messages one by one after 30 seconds
-        setTimeout(() => {
-            const alertContainer = document.querySelector('.alert-container');
-            alertContainer.style.display = 'none';
-
-            const finalContainer = document.querySelector('.final-container');
-            const goodbye = document.getElementById('goodbye');
-            const fornow = document.getElementById('fornow');
-
-            finalContainer.style.display = 'flex';
-            goodbye.style.display = 'block';
-
-            setTimeout(() => {
-                goodbye.style.display = 'none';
-                fornow.style.display = 'block';
-                
-                setTimeout(() => {
-                    fornow.style.display = 'none';
-                }, 3000); // For now displayed for 3 seconds
-
-            }, 3000); // Goodbye displayed for 3 seconds
-        }, 30000); // Alert container displayed for 30 seconds
-    </script>
+    <script src="hazard.js"></script>
 </body>
 </html>
