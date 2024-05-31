@@ -1,0 +1,214 @@
+body, html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scroll */
+    font-family: 'Electrolize', sans-serif;
+ }
+ 
+ .video-background {
+    position: fixed;
+    top: -20%; /* Adjust top to zoom in */
+    left: -20%; /* Adjust left to zoom in */
+    width: 140%; /* Increase width to cover adjustment */
+    height: 140%; /* Increase height to cover adjustment */
+    z-index: -1; /* Place behind everything */
+ }
+ 
+ .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Disables mouse events */
+    filter: brightness(70%);
+ }
+
+ 
+ .Navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 15, 36);
+    z-index: 1000; 
+    text-align: center;
+    padding: 15px 0;
+ }
+ 
+ .Navigation a {
+    color: #e94560;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ .Navigation a:hover {
+    background-color: #0f3460;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+ 
+ 
+ .Title {
+    text-align: center;
+    padding: 10px; 
+    color: #FFF; 
+ }
+ 
+ .Title h1 {
+    font-size: 8em;
+    letter-spacing: 0.05em;
+    color: #e94560; 
+    margin-bottom: 0; 
+    margin-top: 55px;
+    animation: neon-pulse 2.0s infinite alternate; /* Neon pulse animation */
+   }
+
+@keyframes neon-pulse {
+   from {
+      text-shadow: 
+            -2px -2px 0 rgba(255, 255, 255, 0.5),  
+            2px -2px 0 rgba(255, 255, 255, 0.5),
+            -2px  2px 0 rgba(54, 51, 51, 0.5),
+            2px  2px 0 rgba(255, 255, 255, 0.5),
+            0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
+            0 0 10px #e945de; /* Pink neon glow */
+   }
+   to {
+      text-shadow: 
+            -2px -2px 0 rgba(255, 255, 255, 0.5),  
+            2px -2px 0 rgba(255, 255, 255, 0.5),
+            -2px  2px 0 rgba(54, 51, 51, 0.5),
+            2px  2px 0 rgba(255, 255, 255, 0.5),
+            0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
+            0 0 25px #e945de; /* Increase glow intensity */
+   }
+}
+
+
+ .Title p {
+    font-size: 2em; 
+    color: #e94560;
+    margin: 0 0 20px 0;
+    font-weight: 1000;
+    text-shadow: 
+            -2px -2px 0 rgba(255, 255, 255, 0.5),  
+            2px -2px 0 rgba(255, 255, 255, 0.5),
+            -2px  2px 0 rgba(54, 51, 51, 0.5),
+            2px  2px 0 rgba(255, 255, 255, 0.5),
+            0px  0px 5px rgba(0, 0, 0, 0.5), /* Keep the 3D effect shadows */
+ }
+ 
+ .Introduction {
+    margin: auto;
+    padding: 10px 30px 10px 30px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 20px;
+    width: 70%;
+}
+
+.relevantFeatures {
+   margin: auto;
+   margin-top: 20px;
+   padding: 10px 30px 10px 30px;
+   background-color: rgba(0, 0, 0, 0.8); 
+   border-radius: 20px;
+   width: 70%;
+}
+
+.Introduction h2 {
+    color: #e94560; /* Header colors */
+    font-size: 3.5rem;
+    margin: 10px;
+    text-align: center;
+}
+
+.relevantFeatures h2 {
+    color: #e94560; /* Header colors */
+    font-size: 2.5rem;
+    margin: 10px;
+    text-align: center;
+}
+
+.Introduction p, .relevantFeatures p {
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); /* Text shadow for better readability */
+    font-size: 26px;
+    text-align: justify;
+    color: #FFF;
+}
+
+
+.feature {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); 
+   gap: 3px;
+   margin: 30px 0 80px 0;
+   color: #FFF; 
+   perspective: 1000px; /* Needed for the flip effect */
+}
+
+.card {
+   background-color: rgba(0, 0, 0, 0.8); 
+   border-radius: 30px;
+   position: relative;
+   height: 100px; /* adjust based on content */
+   transform-style: preserve-3d;
+   transition: transform 1s;
+   padding: 5px;
+}
+
+.card:hover {
+   cursor: pointer; /* This changes the cursor to a hand (pointer) */
+   transform: scale(1.05); /* Adds a scaling effect on hover */
+   transition-duration: 0.45s;
+}
+
+.card-front, .card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden; /* Prevents the back from being visible when flipped */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 30px;
+}
+
+.card-back p {
+   text-align: center;
+   padding: 5px 15px 5px 15px;
+   margin: 5px;
+   font-size: 18px;
+}
+
+.card-back {
+   transform: rotateX(180deg);
+   color: white;
+   text-align: center;
+}
+
+.card.flipped {
+   transform: rotateX(180deg);
+}
+
+.feature h3 {
+   font-size: 30px;
+   color: #e94560;
+   text-align: center;
+}
+   
+
+ .Authors {
+    background-color: #0a0f24;
+    color: white;
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+ }

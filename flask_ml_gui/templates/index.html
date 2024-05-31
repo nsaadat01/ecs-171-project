@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="Navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('simulation') }}">Simulation</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/K8zQaBtyq9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=K8zQaBtyq9Y" 
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <!-- Title -->
+    <header class="Title">
+        <h1>ASTEROIDS</h1>
+        <p>The Greatest Threats Are The Ones You'll Never See Coming</p>
+    </header>
+
+
+    <!-- Main -->
+    <main> 
+
+        <!-- Introduction -->
+        <div class="Introduction">
+            <h2>Introduction</h2>
+            <p>
+               Asteroids, the silent sentinels of our solar system, pose a rare but catastrophic threat to Earth.
+               Despite modern tracking capabilities, many remain undetected, emphasizing the importance of
+               understanding and monitoring them. Our model identifies dangerous asteroids, sharing crucial
+               information to raise awareness and prevent potential impacts. This effort is vital not only for
+               exploring space but also for safeguarding our planet.
+            </p>
+        </div>
+        
+        <!-- Features -->
+        <div class="relevantFeatures">
+            <h2>Relevant Asteroid Features</h2>
+            <p>
+                The following asteroid features were deemed by our exploratory data analysis to
+                have the greatest predictive power over asteroid hazard potential. Click on each
+                to learn more.
+            </p>
+        </div>
+    
+            <section class="feature">
+    
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Absolute Magnitude</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Measures an asteroid's intrinsic brightness, as if it were 1 AU 
+                            from both the Sun and the observer. Lower values indicate larger asteroids.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Eccentricity</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>
+                            Measures how elongated an asteroid's orbit is. 
+                            A value of 0 indicates a circular orbit, while values closer to 1 
+                            indicate more elongated orbits.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Minimum Orbit Intersection</h3>
+                    </div>
+                    
+                    <div class="card-back">
+                        <p>
+                            The smallest distance between the orbital paths of an asteroid and Earth, 
+                            indicating potential close approaches.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Orbit Uncertainty</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>
+                            Measures how precisely an asteroid's orbit is known. Lower values 
+                            indicate a more precisely determined orbit.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Perihelion Distance</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>
+                            The smallest distance between an asteroid and the Sun.
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-front">
+                        <h3>Relative Velocity</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>The speed (in kilometers per hour) at which an asteroid moves 
+                            relative to Earth during close approaches.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="Authors">
+        <p>Authors: Ben Hassner, Michael Lemucchi, Noor-Aysha Saadat, Nelsen Young</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

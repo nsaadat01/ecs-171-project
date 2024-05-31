@@ -7,17 +7,57 @@
     <title>Hazardous Asteroid</title>
 </head>
 <body>
+    <audio id="alert-sound">
+        <source src="../audio/Warning.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
     <div class="alert-container">
         <p>EMERGENCY ALERT SYSTEM</p>
         <p>National Weather Service</p>
         <p>Issued an</p>
         <p>Asteroid Warning</p>
     </div>
+    <div class="final-container" style="display: none;">
+        <p id="goodbye">Goodbye...</p>
+        <p id="fornow" style="display: none;">Goodluck...</p>
+    </div>
+
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('alert-sound');
+            var playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    console.log("Audio started playing automatically.");
+                }).catch(error => {
+                    console.log("Auto-play was prevented. Consider triggering playback with a user gesture.");
+                });
+            }
+        });
+
+        // Hide alert container and show final messages one by one after 30 seconds
         setTimeout(() => {
             const alertContainer = document.querySelector('.alert-container');
-            alertContainer.style.animation = 'none';
-        }, 30000); // Stops the animation after 30000 milliseconds (30 seconds)
+            alertContainer.style.display = 'none';
+
+            const finalContainer = document.querySelector('.final-container');
+            const goodbye = document.getElementById('goodbye');
+            const fornow = document.getElementById('fornow');
+
+            finalContainer.style.display = 'flex';
+            goodbye.style.display = 'block';
+
+            setTimeout(() => {
+                goodbye.style.display = 'none';
+                fornow.style.display = 'block';
+                
+                setTimeout(() => {
+                    fornow.style.display = 'none';
+                }, 3000); // For now displayed for 3 seconds
+
+            }, 3000); // Goodbye displayed for 3 seconds
+        }, 30000); // Alert container displayed for 30 seconds
     </script>
 </body>
 </html>

@@ -24,9 +24,20 @@ body, html {
     animation: flash 4.5s infinite; /* Keep the total cycle duration the same */
 }
 
-.alert-container p {
+.final-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+}
+
+.alert-container p, .final-container p {
     font-size: 5rem;
 }
+
 
 @keyframes flash {
     0%, 60% { opacity: 1; } /* Fully visible for about 2.1 seconds */
