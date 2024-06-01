@@ -151,6 +151,33 @@ body, html {
    perspective: 1000px; /* Needed for the flip effect */
 }
 
+.creators {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr); 
+   grid-auto-rows: 500px;
+   gap: 3px;
+   margin: 0px 0 100px 0;
+   color: #FFF; 
+   perspective: 1000px; /* Needed for the flip effect */
+}
+
+.containers {
+   background-color: rgba(0, 0, 0, 0.8); 
+   border-radius: 30px;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows: 1fr 1fr 1fr;
+   column-gap: 30px; 
+   margin: 20px 20px 20px 20px;
+   font-size: 25px;
+   padding-top: 35px;
+   padding-left: 35px;
+}
+
+.containers img {
+   border-radius: 30px;
+}
+
 .card {
    background-color: rgba(0, 0, 0, 0.8); 
    border-radius: 30px;
@@ -212,3 +239,4 @@ body, html {
     font-size: 16px;
     text-align: center;
  }
+ 
