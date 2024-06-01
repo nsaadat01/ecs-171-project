@@ -13,7 +13,7 @@ import os
 import pickle
 
 app = Flask(__name__)
-
+'''
 relative_data_file_path = "./nasa.csv"
 
 df = pd.read_csv(relative_data_file_path)
@@ -31,7 +31,7 @@ cols_to_drop = non_numerical_columns + domain_knowledge_drops
 
 clean_df = df.drop(columns=cols_to_drop)
 
-clean_df.head()
+clean_df.head() '''
 
 def getPrediction(input_data):
     with open('RFC_Asteroids_model.pkl', 'rb') as file:
@@ -101,10 +101,11 @@ def predict():
         string = ""
         # Format the prediction for display
         if(hazardous):
-            string = "Your inputted asteroid IS HAZARDOUS! TAKE COVERRRRRR"
+            #string = "Your inputted asteroid IS HAZARDOUS! TAKE COVERRRRRR"
+            return render_template("hazardous.html")
         else:
-            string = "Your inputted asteroid is NOT hazardous. Phew!"
-        return render_template("result.html", name=string)
+            #string = "Your inputted asteroid is NOT hazardous. Phew!"
+            return render_template("result.html")
 
     else:
         return "Something went wrong. Please try again."
