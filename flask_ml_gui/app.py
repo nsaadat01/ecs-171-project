@@ -105,7 +105,7 @@ def predict():
             return render_template("hazardous.html")
         else:
             #string = "Your inputted asteroid is NOT hazardous. Phew!"
-            return render_template("result.html")
+            return render_template("nonhazardous.html")
 
     else:
         return "Something went wrong. Please try again."
