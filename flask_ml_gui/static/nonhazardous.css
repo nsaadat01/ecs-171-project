@@ -1,11 +1,16 @@
 @font-face {
     font-family: 'Calm Font';
-    src: url('/fonts/CalmDownSampson-6YMEA.ttf') format('truetype');
+    src: url('./fonts/CalmDownSampson-6YMEA.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Scary Font';
-    src: url('/fonts/ScareArms-Lxj4.ttf') format('truetype');
+    src: url('./fonts/ScareArms-Lxj4.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('./fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
 }
 
 /* Ensure the body has a black background and white text */
@@ -39,7 +44,7 @@ body {
 }
 
 #congratulations {
-    font-size: 60px
+    font-size: 50px
 }
 
 #safe {
@@ -66,4 +71,17 @@ body {
 /* Class to hide elements */
 .hide {
     opacity: 0 !important; /* Make text fully transparent */
+}
+
+#third-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

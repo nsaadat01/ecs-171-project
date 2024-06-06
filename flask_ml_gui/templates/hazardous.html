@@ -8,7 +8,7 @@
 </head>
 <body>
     <audio id="alert-sound">
-        <source src="/audio/Warning.wav" type="audio/wav">
+        <source src="./audio/Warning.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
     <div class="alert-container">
@@ -34,9 +34,10 @@
     </div>
 
     <div id="third-container" style="display: none;">
-        <p>Press any button to continue</p>
+        <p>&lt;Press any button to continue&gt;</p>
     </div>
 
     <script src="{{ url_for('static', filename='hazardous.js') }}"></script>
+
 </body>
 </html>
