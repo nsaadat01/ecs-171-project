@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hazardous.css') }}">
+    <title>Hazardous Asteroid</title>
+</head>
+<body>
+    <audio id="alert-sound">
+        <source src="./audio/Warning.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="alert-container">
+        <p>EMERGENCY ALERT SYSTEM</p>
+        <p>National Weather Service</p>
+        <p>Issued an</p>
+        <p>Asteroid Warning</p>
+    </div>
+    <div class="final-container" style="display: none;">
+        <div id="firstline">
+            <p style="display: none;">Goodbye</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+        </div>
+        
+        <div id="secondline">
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">and good luck.</p>
+        </div>
+    </div>
+
+    <div id="third-container" style="display: none;">
+        <p>&lt;Press any button to continue&gt;</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='hazardous.js') }}"></script>
+
+</body>
+</html>

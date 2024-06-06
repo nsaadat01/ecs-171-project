@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="Navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('simulation') }}">Simulation</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/K8zQaBtyq9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=K8zQaBtyq9Y" 
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <!-- Title -->
+    <header class="Title">
+        <h1>Our Team</h1>
+        <p>The Greatest Threats Are The Ones You'll Never See Coming</p>
+    </header>
+
+
+    <!-- Main -->
+    <main> 
+    
+            <section class="creators">
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Ben_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Ben Hassner</h1>
+                          <p>Nelsen Young is a 3rd year Computer Science and Engineering Student.</p>
+                        </div>
+                    </div>
+
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Mike_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>M.</h1>
+                          <p>Nelsen Young is a 3rd year Computer Science and Engineering Student.</p>
+                        </div>
+                      </div>
+
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Noor-Aysha_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Noor-Aysha Saadat</h1>
+                          <p>Nelsen Young is a 3rd year Computer Science and Engineering Student.</p>
+                        </div>
+                      </div>
+
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Nelsen_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Nelsen Young</h1>
+                          <p>Nelsen Young is a 3rd year Computer Science and Engineering Student.</p>
+                        </div>
+                      </div>
+
+            </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="Authors">
+        <p>Authors: Ben Hassner, Michael Lemucchi, Noor-Aysha Saadat, Nelsen Young</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

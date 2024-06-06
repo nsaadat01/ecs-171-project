@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nonhazardous.css') }}">
+
+    <title>Nonhazardous Asteroid</title>
+</head>
+<body>
+    <audio id="observatory-music">
+        <source src="./audio/Cursed Comet Observatory.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="final-container">
+        <div id="congratulations" class="hide">Congratulations! Your asteroid is not hazardous!</div>
+        <div id="safe" class="hide">You're safe.</div>
+        <div id="pause" class="hide">...</div>
+        <div id="fornow" class="hide">For now.</div>
+    </div>
+    <div id="third-container" style="display: none;">
+        <p>&lt;Press any button to continue&gt;</p>
+    </div>
+    <script src="{{ url_for('static', filename='nonhazardous.js') }}"></script>
+</body>
+</html>
