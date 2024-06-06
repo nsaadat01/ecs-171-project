@@ -159,6 +159,7 @@ body, html {
    margin: 0px 0 100px 0;
    color: #FFF; 
    perspective: 1000px; /* Needed for the flip effect */
+
 }
 
 .containers {
@@ -169,13 +170,15 @@ body, html {
    grid-template-rows: 1fr 1fr 1fr;
    column-gap: 30px; 
    margin: 20px 20px 20px 20px;
-   font-size: 25px;
+   font-size: 23px;
    padding-top: 35px;
    padding-left: 35px;
 }
 
 .containers img {
    border-radius: 30px;
+   height: auto; 
+   max-width: 100%;
 }
 
 .card {
