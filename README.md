@@ -1,2 +1,2 @@
 # ecs-171-project
-This is our project for the Machine learning UC Davis course.
+This is our final project for ECS 171 - Machine learning, a UC Davis course.
