@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>About</h1>
+
+    <!-- Navigation -->
+    <nav class="Navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('simulation') }}">Simulation</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/K8zQaBtyq9Y?autoplay=1&mute=1&controls=0&loop=1&playlist=K8zQaBtyq9Y" 
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <!-- Title -->
+    <header class="Title">
+        <h1>Our Team</h1>
+    </header>
+
+
+    <!-- Main -->
+    <main> 
+    
+            <section class="creators">
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Ben_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Ben Hassner</h1>
+                          <h3><em>Project Lead</em></h3>
+                          <p>Ben is a third-year Computer Science major on a pre-med track at the University of California, Davis. Ben was inspired to embark on this project by his childhood love of space and astronomy combined with a growing fascination with machine learning.</p>
+                        </div>
+                    </div>
+
+                    <div class="containers">
+                        <div class="image"> 
+                          <img src="{{ url_for('static', filename='headshots/Mike_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Michael Lemucchi</h1>
+                          <h3><em>Tech Associate</em></h3>
+                          <p>Michael is a third-year Computer Science major with a minor in Economics at the University of California, Davis. In this project, Michael was able to exercise his passion for web development and pique his interest in the dangers of asteroids.</p>
+                        </div>
+                      </div>
+
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Noor-Aysha_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Noor-Aysha Saadat</h1>
+                          <h3><em>Tech Associate</em></h3>
+                          <p>Noor-Aysha Saadat is a 3rd year Computer Science and Engineering Student at the University of California, Davis. She chose to take on this project to explore the field of machine learning and to develop her full stack skills.</p>
+                        </div>
+                      </div>
+
+                    <div class="containers">
+                        <div class="image">
+                          <img src="{{ url_for('static', filename='headshots/Nelsen_Headshot.jpg') }}">
+                        </div>
+                        <div class="text">
+                          <h1>Nelsen Young</h1>
+                          <h3><em>Tech Associate</em></h3>
+                          <p>Nelsen Young is a 3rd year Computer Science and Engineering Student. He chose to take on this project because he wanted to explore machine learning and backend developement.</p>
+                        </div>
+                
+                      </div>
+
+            </section>
+            <div class="Introduction">
+              <p style="text-align: center;">GitHub Link: <a href="https://github.com/nsaadat01/ecs-171-project">https://github.com/nsaadat01/ecs-171-project</a></p>
+            </div>
+            <br></br> 
+           
+
+        
+    </main>
+    <br></br> 
+
+    <!-- Footer -->
+    <footer class="Authors">
+        <p>Authors: Ben Hassner, Michael Lemucchi, Noor-Aysha Saadat, Nelsen Young</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

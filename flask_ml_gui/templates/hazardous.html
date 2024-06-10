@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hazardous.css') }}">
     <title>Hazardous Asteroid</title>
-    <link rel="stylesheet" href="hazardous.css">
 </head>
 <body>
-<div id="startOverlay" class="full-screen-button">Tap Anywhere to Start</div>
-<audio id="emergencyAlert">
-    <source src="audio/emergency.mp3" type="audio/mp3">
-</audio>
-<div class="shake-container" id="shakeContainer">
-    <div id="messageContainer">
-        <p id="message1" class="message hidden">
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-            This is not a drill!
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-        </p>
-        <p id="message2" class="message hidden">
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-            Take cover!
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-        </p>
-        <p id="message3" class="message hidden">
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-            Goodbye.
-            <img src="images/alert.png" alt="Alert" class="alert-icon">
-        </p>
+    <audio id="alert-sound">
+        <source src="./audio/Warning.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="alert-container">
+        <p>EMERGENCY ALERT SYSTEM</p>
+        <p>National Weather Service</p>
+        <p>Issued an</p>
+        <p>Asteroid Warning</p>
     </div>
-</div>
+    <div class="final-container" style="display: none;">
+        <div id="firstline">
+            <p style="display: none;">Goodbye</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+        </div>
+        
+        <div id="secondline">
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">.</p>
+            <p style="display: none;">and good luck.</p>
+        </div>
+    </div>
 
-<script src="hazardous.js"></script>
+    <div id="third-container" style="display: none;">
+        <p>&lt;Press any button to continue&gt;</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='hazardous.js') }}"></script>
+
 </body>
 </html>

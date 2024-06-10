@@ -1,69 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('./fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
 
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'Electrolize', sans-serif;
-    background: linear-gradient(to bottom, #333, #000);
-    overflow: hidden;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 
-.full-screen-button {
-    position: fixed;
-    top: 0;
-    left: 0;
+.alert-container {
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    background: rgba(0, 0, 0, 0.75);
     color: white;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.hidden {
-    display: none;
-}
-
-#messageContainer {
-    top: 25%;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
     text-align: center;
+    background-color: black;
+    padding: 2rem;
+    animation: flash 4.5s infinite;
 }
 
-.message {
-    font-size: 6em;
-    color: red;
+.final-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-container p, .final-container p {
+    margin: 0;
+    font-size: 5rem;
+    margin-bottom: 0.5em;  /* Add some space between lines in the alert container */
+}
+
+#firstline, #secondline {
     display: flex;
     justify-content: center;
+    width: 100%;
+}
+
+#secondline {
+    position: relative;
+    left: 20px;  /* Shift to the right */
+    top: 20px;   /* Shift downwards */
+}
+
+@keyframes flash {
+    0%, 60% { opacity: 1; }
+    80% { opacity: 0; }
+}
+
+#third-container {
+    width: 100%;
+    color: white;
+    font-family: 'VCR OSD Mono';
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    display: flex;
     align-items: center;
-    display: none; 
-}
-
-.alert-icon {
-    width: 64px;
-    height: 64px;
-}
-
-.shake-container {
-    animation: shake 0.1s linear 150;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translate(0, 0); }
-    10%, 50%, 90% { transform: translate(-5px, -3px); }
-    30%, 70% { transform: translate(5px, 3px); }
-}
-
-.fade-out {
-    animation: fadeOut 3s forwards;
-}
-
-@keyframes fadeOut {
-    to { opacity: 0; }
+    justify-content: center;
 }
